@@ -339,7 +339,9 @@ import UIKit
         }
         else {
             moveIndicatorView()
-            self.sendActions(for: .valueChanged)
+            if shouldSendEvent {
+                self.sendActions(for: .valueChanged)
+            }
         }
     }
     
