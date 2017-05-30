@@ -432,7 +432,7 @@ import UIKit
 extension BetterSegmentedControl: UIGestureRecognizerDelegate {
     override open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == panGestureRecognizer {
-            return indicatorView.frame.contains(gestureRecognizer.location(in: self))
+            return indicatorView.frame.contains(gestureRecognizer.location(in: self)) && !panningDisabled
         }
         return super.gestureRecognizerShouldBegin(gestureRecognizer)
     }
